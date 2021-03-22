@@ -65,6 +65,12 @@
                 <constraint firstItem="NCZ-ON-e3q" firstAttribute="top" secondItem="duT-if-8xr" secondAttribute="top" constant="-15" id="Jj9-eT-zmg"/>
             </constraints>
             <size key="customSize" width="224" height="369"/>
+            <connections>
+                <outlet property="bgView" destination="PGn-F4-Xha" id="ERG-UA-DlV"/>
+                <outlet property="cardView" destination="duT-if-8xr" id="O1J-EG-JN1"/>
+                <outlet property="img" destination="axy-0V-Wqp" id="QWl-Eo-bjE"/>
+                <outlet property="title" destination="nBe-x4-QlE" id="yqD-Ed-CLx"/>
+            </connections>
             <point key="canvasLocation" x="239.13043478260872" y="123.54910714285714"/>
         </collectionViewCell>
     </objects>
