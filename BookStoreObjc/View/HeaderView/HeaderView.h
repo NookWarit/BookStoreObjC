@@ -10,16 +10,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HeaderView : UIView
-@property (strong, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 @property (weak, nonatomic) UINavigationController *navigationController;
 
-- (IBAction)backBtnDidTap:(UIButton *)sender;
+- (IBAction)backBtnDidTap:(id)sender;
 - (IBAction)searchDidTap:(id)sender;
 
--(void)configureView:(BOOL*)backHide :(BOOL*)seachHide :(UINavigationController*)navigationController;
+-(void)configureViewwithbackhide:(BOOL)backHide withseachhide:(BOOL)seachHide navigation:(UINavigationController*)navigationController;
 
 @end
 

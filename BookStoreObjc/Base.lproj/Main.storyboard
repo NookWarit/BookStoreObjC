@@ -47,6 +47,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="zLp-dv-wh5"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="R8L-Nx-3w2">
+                                <rect key="frame" x="0.0" y="54" width="414" height="788"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="czg-nY-UtP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -63,6 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AIC-uA-QRg"/>
                     <connections>
+                        <outlet property="activity" destination="R8L-Nx-3w2" id="tes-Zl-Dlk"/>
                         <outlet property="collectionView" destination="F1x-Px-Cdv" id="4m7-u4-xCV"/>
                         <outlet property="navbar" destination="9Cl-r4-vb9" id="fZd-6K-mJP"/>
                     </connections>
@@ -79,7 +85,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-Do-Z6e" customClass="HeaderView" customModule="BookStoreSwift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuW-Do-Z6e" customClass="HeaderView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -89,6 +95,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Zp-dD-j2Y">
                                 <rect key="frame" x="0.0" y="188" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Trc-IG-LGc" id="RSp-fX-fyH"/>
+                                    <outlet property="delegate" destination="Trc-IG-LGc" id="uC2-Hn-zXs"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Serach" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pu-uU-7ya">
                                 <rect key="frame" x="5" y="120" width="404" height="56"/>
@@ -116,6 +126,11 @@
                             <constraint firstItem="8Zp-dD-j2Y" firstAttribute="top" secondItem="8pu-uU-7ya" secondAttribute="bottom" constant="12" id="v33-NV-kii"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="fuW-Do-Z6e" id="AWu-EF-SIu"/>
+                        <outlet property="searchView" destination="8pu-uU-7ya" id="q8s-xO-jza"/>
+                        <outlet property="tableView" destination="8Zp-dD-j2Y" id="bZA-hd-lki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03I-h3-8Bt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,7 +144,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-Aw-qrD" customClass="HeaderView" customModule="BookStoreSwift" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-Aw-qrD" customClass="HeaderView">
                                 <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -166,6 +181,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="webviewBtn:" destination="iFX-aM-er3" eventType="touchUpInside" id="jZo-7E-wGv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nWX-mV-Q3c"/>
@@ -192,6 +210,14 @@
                             <constraint firstItem="g8a-Aw-qrD" firstAttribute="leading" secondItem="nWX-mV-Q3c" secondAttribute="leading" id="uGg-kz-bEN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardviewBtn" destination="May-ot-LLA" id="P5N-H5-ISs"/>
+                        <outlet property="detailLabel" destination="dz2-45-RTR" id="0br-Br-Ffz"/>
+                        <outlet property="img" destination="P7y-zv-gAe" id="qeJ-wC-V8a"/>
+                        <outlet property="navBar" destination="g8a-Aw-qrD" id="t77-34-VGh"/>
+                        <outlet property="titleLabel" destination="FJJ-0j-X2Y" id="bgk-7g-I7D"/>
+                        <outlet property="wbBtn" destination="ON4-5K-FTM" id="p5N-aW-8gC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsS-ln-0qy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -47,7 +47,7 @@
                             </constraints>
                             <state key="normal" image="back"/>
                             <connections>
-                                <action selector="backBtnDidTap:" destination="-1" eventType="touchUpInside" id="BvU-WX-C5M"/>
+                                <action selector="backBtnDidTap:" destination="-1" eventType="touchUpInside" id="9zA-4E-S21"/>
                             </connections>
                         </button>
                     </subviews>

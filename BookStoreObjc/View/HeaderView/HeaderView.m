@@ -1,10 +1,3 @@
-//
-//  HeaderView.m
-//  BookStoreObjc
-//
-//  Created by Foodstory on 22/3/2564 BE.
-//
-
 #import "HeaderView.h"
 
 @implementation HeaderView
@@ -12,7 +5,8 @@
 @synthesize searchBtn;
 @synthesize navigationController;
 
-- (void)backBtnDidTap:(UIButton *)sender{
+
+- (IBAction)backBtnDidTap:(id)sender{
     [navigationController popViewControllerAnimated:true];
 }
 
@@ -46,7 +40,7 @@
     
 }
 
--(void)configureView:(BOOL*)backHide :(BOOL*)seachHide :(UINavigationController*)navigationController{
+-(void)configureViewwithbackhide:(BOOL)backHide withseachhide:(BOOL)seachHide navigation:(UINavigationController*)navigationController{
     [backBtn setHidden:backHide];
     [searchBtn setHidden:seachHide];
     self.navigationController = navigationController;

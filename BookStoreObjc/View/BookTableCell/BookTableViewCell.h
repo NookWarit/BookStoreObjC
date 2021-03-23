@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *bylineLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *img;
 
+-(void) configureCellwithTitle:(NSString *)title withdetail:(NSString *)detail withByline:(NSString *)byline withImgUrl:(NSString *)imgUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END
